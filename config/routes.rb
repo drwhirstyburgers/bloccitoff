@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  get 'users/show'
 
   devise_for :users
+
+  resources :users do
+    resources :items, only: [:create, :destroy]
+  end
 
   get 'welcome/index'
 

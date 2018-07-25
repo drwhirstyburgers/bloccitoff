@@ -1,5 +1,8 @@
 class User < ApplicationRecord
   attr_writer :login
+
+  has_many :items, dependent: :destroy
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable,
          authentication_keys: [:login]
