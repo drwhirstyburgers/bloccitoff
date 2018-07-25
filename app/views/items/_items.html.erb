@@ -1,5 +1,10 @@
 <div class='col'>
     <ul class="list-group">
-      <li class="list-group-item"><%= item.name %></li>
+      <li class="list-group-item">
+        <%= item.name %>
+        <div class='pull-right'>
+          <%= link_to "", [current_user, item], method: :delete, class: 'glyphicon glyphicon-ok' %>
+        </div>
+      </li>
     </ul>
 </div>
