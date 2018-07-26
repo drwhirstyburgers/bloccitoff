@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
+  respond_to :html, :js
+
   def new
-    @item = Item.new
+    @new_item = Item.new
   end
 
   def create
@@ -9,10 +11,13 @@ class ItemsController < ApplicationController
 
     if @item.save
       flash[:notice] = "Item was added to the list"
-      redirect_to current_user
     else
       flash[:error] = "There was an error adding the item. Please try again."
-      redirect_to current_user
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 
@@ -23,6 +28,11 @@ class ItemsController < ApplicationController
       flash[:notice] = "Item was deleted."
     else
         flash[:error] = "There was an error deleting the item. Please try again."
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 

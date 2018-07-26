@@ -3,9 +3,13 @@
 
   <div class='container'>
     <div class='row'>
-      <%= render 'items/form'  %>
+      <div class='new-item'>
+        <%= render 'items/form', collection: @items  %>
+      </div>
       <% @items.each do |item| %>
-        <%= render partial: 'items/items', locals: { item: item } %>
+        <div class='js-items'>
+          <%= render partial: 'items/items', locals: { item: item } %>
+        </div>
       <% end %>
     </div>
   </div>

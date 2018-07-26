@@ -3,7 +3,7 @@
       <li class="list-group-item">
         <%= item.name %>
         <div class='pull-right'>
-          <%= link_to "", [current_user, item], method: :delete, class: 'glyphicon glyphicon-ok' %>
+          <%= link_to "", [current_user, item], method: :delete, class: 'glyphicon glyphicon-ok', remote: true %>
         </div>
       </li>
     </ul>
