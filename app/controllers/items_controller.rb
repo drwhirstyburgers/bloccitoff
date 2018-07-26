@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-  respond_to :html, :js
 
   def new
     @new_item = Item.new
@@ -32,7 +31,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.js
+      format.json
     end
   end
 
