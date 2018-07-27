@@ -1,9 +1,5 @@
 class ItemsController < ApplicationController
 
-  def new
-    @new_item = Item.new
-  end
-
   def create
     @item = current_user.items.build(item_params)
     @new_item = Item.new
@@ -23,15 +19,9 @@ class ItemsController < ApplicationController
   def destroy
     @item = Item.find(params[:id])
 
-    if @item.destroy
-      flash[:notice] = "Item was deleted."
-    else
-        flash[:error] = "There was an error deleting the item. Please try again."
-    end
-
     respond_to do |format|
       format.html
-      format.json
+      format.js
     end
   end
 

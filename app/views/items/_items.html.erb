@@ -1,10 +1,10 @@
-<div class='col'>
+  <div class='col'>
     <ul class="list-group">
-      <li class="list-group-item">
+      <li class="list-group-item" id="item_<%= item.id %>">
         <%= item.name %>
         <div class='pull-right'>
-          <%= link_to "", [current_user, item], method: :delete, class: 'glyphicon glyphicon-ok', remote: true %>
+          <%= link_to "", [current_user, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok', remote: true %>
         </div>
       </li>
     </ul>
-</div>
+  </div>

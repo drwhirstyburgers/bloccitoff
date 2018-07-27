@@ -1,2 +1,4 @@
-$('#task-form').html("<%= j (render 'items') %>");
-$('#task-form').slideDown(350);
+<% if @item.valid? %>
+  $('ul').append("<%= j render partial: 'items/items', locals: { item: @item } %>")
+  $('form')[0].reset();
+<% end %>
