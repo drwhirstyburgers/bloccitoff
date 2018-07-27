@@ -3,6 +3,7 @@
       <li class="list-group-item" id="item_<%= item.id %>">
         <%= item.name %>
         <div class='pull-right'>
+          <%= "#{distance_of_time_in_words(Time.now, item.created_at + 7.days)} before deletion" %>  
           <%= link_to "", [current_user, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok', remote: true %>
         </div>
       </li>
