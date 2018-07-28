@@ -1,4 +1,4 @@
 <% if @item.valid? %>
-  $('ul').append("<%= j render partial: 'items/items', locals: { item: @item } %>")
+  $('.items').append("<%= j render partial: 'items/item', locals: { item: @item } %>")
   $('form')[0].reset();
 <% end %>

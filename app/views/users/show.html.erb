@@ -4,9 +4,11 @@
   <div class='container'>
     <div class='row'>
       <%= render partial: 'items/form', locals: { new_item: @new_item } %>
-      <% @items.each do |item| %>
-        <%= render partial: 'items/items', locals: { item: item } %>
-      <% end %>
+      <div class='items'>
+        <% @items.each do |item| %>
+          <%= render partial: 'items/item', locals: { item: item } %>
+        <% end %>
+      </div>
     </div>
   </div>
 <% end %>

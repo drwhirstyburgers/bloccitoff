@@ -6,6 +6,10 @@ Rails.application.routes.draw do
     resources :items, only: [:create, :destroy]
   end
 
+  authenticated :user do
+    root 'users#show', as: :authenticated_index
+  end
+
   get 'welcome/index'
 
   get 'welcome/about'
