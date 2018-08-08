@@ -1,25 +1,10 @@
-# README
+## Bloccitoff is a self-destructing to do app!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### It was built using rails and:</h5>
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# bloccitoff
+<ul>
+  <li>Devise gem for users</li>
+  <li>Faker gem for seeding data</li>
+  <li>Rake for automating the self-destruction of to-dos</li>
+  <li>SendGrid for the mailer</li>
+</ul>
