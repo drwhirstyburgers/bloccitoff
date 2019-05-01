@@ -5,9 +5,7 @@
     <div class='row'>
       <%= render partial: 'items/form', locals: { new_item: @new_item } %>
       <div class='items'>
-        <% @items.each do |item| %>
-          <%= render partial: 'items/item', locals: { item: item } %>
-        <% end %>
+          <app :items="<%= @items.to_json %>"></app>
       </div>
     </div>
   </div>

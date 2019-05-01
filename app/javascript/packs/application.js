@@ -24,11 +24,6 @@ Vue.use(TurbolinksAdapter)
 document.addEventListener('turbolinks:load', () => {
   const app = new Vue({
     el: '[data-behavior="vue"]',
-    data: () => {
-      return {
-        message: "Can you say hello?"
-      }
-    },
     components: { App }
   })
 })
