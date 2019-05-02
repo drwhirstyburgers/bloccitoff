@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-  <div v-for="item in items" v-bind:items="items">
+  <div v-for="item in items" v-model="items">
   <div class='col'>
     <ul class="list-group">
       <li class="list-group-item">
@@ -20,11 +20,19 @@
 export default {
   props: ['items'],
   methods: {
-    deleteTodo(item) {
-      console.log(item.id);
-      const index = this.items.indexOf(item)
-      console.log(index);
-      this.items.splice(index, 1);
+    deleteTodo: function(item) {
+      const uId = item.user_id;
+      const id = item.id;
+
+      Rails.ajax({
+        beforeSend: () => true,
+        type: 'DELETE',
+        dataType: 'json',
+        url: '/users/' + uId + '/' + id + '/',
+        data: item
+      });
+
+    console.log('http://localhost:3000/users/' + item.user_id + '/' + item.id);
     }
   }
 }
